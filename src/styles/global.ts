@@ -19,9 +19,16 @@ export default createGlobalStyle`
   body {
   background-color: ${props => props.theme.colors.background};
   color: ${props => props.theme.colors.text.main};
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
+  }
+
+  body, input, textarea, button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+
+  h1 h2 h3 h4 h5 strong {
+    font-weight: 600
   }
 
   button {
