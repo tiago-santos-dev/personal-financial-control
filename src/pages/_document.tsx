@@ -43,9 +43,14 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
 
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet" />
           <link
             href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=optional"
             rel="stylesheet"
+          />
+          <link
+            rel="icon" href="https://www.ticto.com.br/dist/assets/favicon/favicon.png"
           />
         </Head>
         <body>
