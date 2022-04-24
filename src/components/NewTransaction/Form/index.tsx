@@ -25,11 +25,9 @@ export const NewTransactionForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Title>Cadastrar Transação</Title>
-      {/* register your input into the hook by invoking the "register" function */}
       <Input {...register("title", { required: true })} placeholder='Nome' />
       {errors.amount && <ErrorMessage>É necessário informar um nome</ErrorMessage>}
       <Input {...register("amount", { required: true })} placeholder='Preço' />
-      {/* errors will return when field validation fails  */}
       {errors.amount && <ErrorMessage>É necessário informar o valor</ErrorMessage>}
 
       <TransactionTypeContainer >
@@ -54,7 +52,6 @@ export const NewTransactionForm = () => {
         </RadioBox>
       </TransactionTypeContainer>
       <Input {...register("category", { required: true })} placeholder='Categoria' />
-      {/* errors will return when field validation fails  */}
       {errors.category && <ErrorMessage>É necessário informar uma categoria</ErrorMessage>}
 
       <SubmitButton type="submit" > Cadastrar</SubmitButton>
