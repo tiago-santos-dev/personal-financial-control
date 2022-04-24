@@ -50,7 +50,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
-            rel="icon" href="https://www.ticto.com.br/dist/assets/favicon/favicon.png"
+            rel="icon" href="/favicon.png"
           />
         </Head>
         <body>
