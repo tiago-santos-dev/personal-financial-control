@@ -12,6 +12,6 @@ export const Content = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  padding: 2.5rem 1rem 11rem;
+  padding: 2.5rem 1rem 6rem;
 
 `;

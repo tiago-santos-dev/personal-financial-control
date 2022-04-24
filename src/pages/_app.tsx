@@ -8,6 +8,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     <Component {...pageProps} />
     <GlobalStyle />
   </ThemeProvider>
-);
+)
 
 export default MyApp;

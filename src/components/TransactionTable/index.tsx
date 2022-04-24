@@ -2,7 +2,12 @@ import theme from "@styles/theme";
 import { BiTrashAlt } from "react-icons/bi";
 import { Container } from "./styles";
 
-export const TransactioTable: React.FC = () => (
+export const TransactionTable: React.FC = () =>
+// useEffect(() => {
+//   api.get('/transactions')
+//     .then(data => console.log(data));
+// }, [])
+(
   <Container>
     <table>
       <thead>
@@ -32,3 +37,4 @@ export const TransactioTable: React.FC = () => (
     </table>
   </Container>
 )
+
