@@ -1,4 +1,5 @@
 import Modal from "react-modal";
+import { NewTransactionForm } from "../Form";
 
 export interface NewTransactionModalProps {
   isOpen: boolean;
@@ -9,7 +10,9 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
   <Modal
     isOpen={isOpen}
     onRequestClose={onRequestClose}
+    overlayClassName='react-modal-overlay'
+    className='react-modal-content'
   >
-    <h1>Modal</h1>
+    <NewTransactionForm />
   </Modal>
 )
