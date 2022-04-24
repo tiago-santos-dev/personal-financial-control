@@ -1,3 +1,4 @@
+import { api } from "@services/api";
 import theme from "@styles/theme";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -7,13 +8,19 @@ import { ErrorMessage, Input, RadioBox, SubmitButton, Title, TransactionTypeCont
 type Inputs = {
   title: string,
   amount: number,
-  categorie: string,
+  category: string,
 };
 
 export const NewTransactionForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
   const [type, setType] = useState('deposit');
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+
+  const onSubmit: SubmitHandler<Inputs> = data => {
+    api.post('/transactions', {
+      type,
+      ...data
+    })
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -46,9 +53,9 @@ export const NewTransactionForm = () => {
           <span>Saída</span>
         </RadioBox>
       </TransactionTypeContainer>
-      <Input {...register("categorie", { required: true })} placeholder='Categoria' />
+      <Input {...register("category", { required: true })} placeholder='Categoria' />
       {/* errors will return when field validation fails  */}
-      {errors.categorie && <ErrorMessage>É necessário informar uma categoria</ErrorMessage>}
+      {errors.category && <ErrorMessage>É necessário informar uma categoria</ErrorMessage>}
 
       <SubmitButton type="submit" > Cadastrar</SubmitButton>
     </form>

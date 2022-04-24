@@ -22,12 +22,12 @@ export const Container = styled.div`
       background: ${props => props.theme.colors.shape};
       color: ${props => props.theme.colors.text.main};
 
-      &.income{
+      &.deposit{
       color: ${props => props.theme.colors.success.main};
       font-weight: 600;
       }
 
-      &.outcome {
+      &.withdraw {
       color: ${props => props.theme.colors.danger.main};
       font-weight: 600;
       }
