@@ -1,8 +1,8 @@
 import theme from "@styles/theme";
-import React from "react";
+import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FiArrowDownCircle, FiArrowUpCircle } from "react-icons/fi";
-import { ErrorMessage, Input, SubmitButton, Title, TransactionTypeContainer } from "./styles";
+import { ErrorMessage, Input, RadioBox, SubmitButton, Title, TransactionTypeContainer } from "./styles";
 
 type Inputs = {
   title: string,
@@ -12,7 +12,7 @@ type Inputs = {
 
 export const NewTransactionForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-
+  const [type, setType] = useState('deposit');
   const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
   return (
@@ -26,15 +26,25 @@ export const NewTransactionForm = () => {
       {errors.amount && <ErrorMessage>É necessário informar o valor</ErrorMessage>}
 
       <TransactionTypeContainer >
-        <button type="button">
+        <RadioBox
+          type="button"
+          activeColor="green"
+          isActive={type === 'deposit'}
+          onClick={() => setType('deposit')}
+        >
           <FiArrowDownCircle size={28} color={theme.colors.success.main} />
           <span>Entrada</span>
-        </button>
+        </RadioBox>
 
-        <button type="button">
+        <RadioBox
+          type="button"
+          activeColor="red"
+          isActive={type === 'withdraw'}
+          onClick={() => setType('withdraw')}
+        >
           <FiArrowUpCircle size={28} color={theme.colors.danger.main} />
           <span>Saída</span>
-        </button>
+        </RadioBox>
       </TransactionTypeContainer>
       <Input {...register("categorie", { required: true })} placeholder='Categoria' />
       {/* errors will return when field validation fails  */}
