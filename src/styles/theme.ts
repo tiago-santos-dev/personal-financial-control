@@ -18,7 +18,11 @@ const theme = {
       main: '#DB3766',
       light: '#E23161'
     },
-    shape: '#FFFFFF'
+    shape: '#FFFFFF',
+    input: {
+      background: '#F7F7F7',
+      border: '#D9D9D9'
+    }
   }
 }
 export default theme;

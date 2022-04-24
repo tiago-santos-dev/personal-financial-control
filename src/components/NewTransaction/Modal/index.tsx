@@ -1,3 +1,4 @@
+import { FiX } from "react-icons/fi";
 import Modal from "react-modal";
 import { NewTransactionForm } from "../Form";
 
@@ -13,6 +14,12 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
     overlayClassName='react-modal-overlay'
     className='react-modal-content'
   >
+    <button
+      className="react-modal-close"
+      type="button"
+      onClick={onRequestClose}>
+      <FiX size={21} />
+    </button>
     <NewTransactionForm />
   </Modal>
 )
