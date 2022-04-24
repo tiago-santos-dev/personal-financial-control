@@ -4,7 +4,7 @@ const theme = {
     text: {
       main: '#484F55',
       dark: '#4E5555',
-      light: '#4C5A5A'
+      light: '#B9B9B9'
     },
     primary: {
       main: '#30107D',
