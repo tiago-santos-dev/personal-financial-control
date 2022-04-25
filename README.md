@@ -1,10 +1,9 @@
 
-
 # Personal Financial Control
 
 The purpose of the application is to control inputs and outputs and provide an overview of the user's budget.
 
-## Authors
+## Author
 
 - [@tiago-santos-dev](https://github.com/tiago-santos-dev)
 
@@ -74,4 +73,6 @@ Run the project
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
 
