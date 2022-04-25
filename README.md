@@ -1,4 +1,5 @@
 
+
 # Personal Financial Control
 
 The purpose of the application is to control inputs and outputs and provide an overview of the user's budget.
@@ -20,6 +21,13 @@ Create Transaction Modal
 
 Home - Mobile
 ![App Screenshot](https://i.postimg.cc/SRWQ9txD/03.png)
+## Features
+
+- List transactions
+- Create new transactions
+- Delete transactions
+
+
 ## Tech Stack
 
 NextJs, Typescript, Miragejs, axios, react-modal, react-hook-form and Styled-components
@@ -66,10 +74,4 @@ Run the project
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
-## Features
-
-- Add products to cart
-- Stock checking
 
