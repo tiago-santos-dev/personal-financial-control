@@ -9,6 +9,7 @@ export interface NewTransactionModalProps {
 
 export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionModalProps) => (
   <Modal
+    ariaHideApp={false}
     isOpen={isOpen}
     onRequestClose={onRequestClose}
     overlayClassName='react-modal-overlay'

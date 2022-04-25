@@ -12,7 +12,7 @@ createServer({
     server.db.loadData({
       transactions: [
         {
-          id: 1,
+          id: '1',
           title: 'Salário',
           type: 'deposit',
           category: 'Receita Fixa',
@@ -21,7 +21,7 @@ createServer({
 
         },
         {
-          id: 2,
+          id: '2',
           title: 'Curso de NextJS',
           type: 'withdraw',
           category: 'Educação',
@@ -39,9 +39,10 @@ createServer({
 
     this.post('/transactions', (schema, request) => {
       const data = JSON.parse(request.requestBody)
-
       return schema.create('transaction', data)
     })
+
+    this.del("/transactions/:id");
   }
 })
 const MyApp = ({ Component, pageProps }: AppProps) => (

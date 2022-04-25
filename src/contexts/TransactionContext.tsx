@@ -2,8 +2,8 @@
 import { api } from "@services/api";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-interface Transaction {
-  id: number,
+export interface TransactionProps {
+  id: string,
   title: string,
   type: 'deposit' | 'withdraw',
   category: string,
@@ -15,17 +15,18 @@ interface TransactionsProviderProps {
   children: ReactNode;
 }
 
-type TransactionInput = Omit<Transaction, 'id' | 'createdAt'>;
+type TransactionInput = Omit<TransactionProps, 'id' | 'createdAt'>;
 
 interface TransactionContextData {
-  transactions: Transaction[];
+  transactions: TransactionProps[];
   createTransaction: (transaction: TransactionInput) => Promise<void>;
+  deleteTransaction: (id: string) => Promise<void>;
 }
 
 export const TransactionContext = createContext<TransactionContextData>({} as TransactionContextData);
 
 export const TransactionProvider = ({ children }: TransactionsProviderProps) => {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [transactions, setTransactions] = useState<TransactionProps[]>([]);
 
   useEffect(() => {
     api.get('/transactions')
@@ -44,8 +45,22 @@ export const TransactionProvider = ({ children }: TransactionsProviderProps) => 
     ])
   }
 
+  const deleteTransaction = async (id: string) => {
+    try {
+      await api.delete(`/transactions/${id}`);
+
+      const filteredTransactions = transactions
+        .filter(transaction => transaction.id !== id);
+
+      setTransactions(filteredTransactions);
+
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
-    <TransactionContext.Provider value={{ transactions, createTransaction }} >
+    <TransactionContext.Provider value={{ transactions, createTransaction, deleteTransaction }} >
       {children}
     </TransactionContext.Provider>
   )

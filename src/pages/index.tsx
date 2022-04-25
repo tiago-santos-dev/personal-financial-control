@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { TransactionProvider } from 'src/contexts/TransactionContext';
 
 const Home: NextPage = () => {
-  const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(true)
+  const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false)
 
   const handleOpenNewTransactionModal = () => {
     setIsNewTransactionModalOpen(true)
