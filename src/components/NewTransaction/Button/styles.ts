@@ -12,6 +12,10 @@ export const Container = styled.button`
   height: 3rem;
   transition: filter 0.2s;
 
+  @media (max-width:420px) {
+  margin-top: 2rem;
+  }
+
   &:hover{
     filter: brightness(0.9)
   }

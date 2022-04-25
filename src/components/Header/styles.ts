@@ -14,4 +14,8 @@ export const Content = styled.header`
 
   padding: 2.5rem 1rem 6rem;
 
+  @media (max-width:420px) {
+    flex-direction: column;
+  }
+
 `;
