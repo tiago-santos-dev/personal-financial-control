@@ -20,6 +20,6 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: NewTransactionMo
       onClick={onRequestClose}>
       <FiX size={21} />
     </button>
-    <NewTransactionForm />
+    <NewTransactionForm handleCloseModal={onRequestClose} />
   </Modal>
 )
