@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   font-size: 1rem;
+  font-weight: 500;
   text-transform: uppercase;
   color: #FFF;
   background-color:${props => props.theme.colors.primary.light};
